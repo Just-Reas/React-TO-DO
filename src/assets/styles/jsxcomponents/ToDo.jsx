@@ -61,7 +61,7 @@ const ToDo = () => {
                 isDone: false,
             }
 
-            setTasks([...tasks, newTask])
+            setTasks(prev => ([...prev, newTask]))
             setNewTaskTitle('')
         }
     }
