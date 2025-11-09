@@ -1,0 +1,5 @@
+@mixin verdana($weight: normal, $size: 1rem){
+    font-family: Verdana, sans-serif;
+    font-weight: $weight;
+    font-size: $size;
+}

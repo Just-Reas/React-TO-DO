@@ -1,0 +1,85 @@
+.todo{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    gap: 1.5rem;
+    padding: 1.5625rem;
+
+    background-color: $black_color;
+    border: .5rem solid $neon_color;
+    border-radius: .3125rem;
+
+    &__title{
+        text-align: center;
+
+        color: $white_color;
+
+        @include verdana(600,1.5rem);
+
+    }
+
+    &-form{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        &__newtask{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__bartask{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include verdana(600,1.25rem);
+
+            @media screen and (max-width:576px){
+                @include verdana(600,0.75rem);
+            }
+
+            &__total{
+                color: $white_color;
+            }
+
+            &__button{
+                color: $white_color;
+                background-color: unset;
+                border: unset;
+
+                &:hover{
+                    color: $neon_color;
+                    text-decoration: underline;
+                }
+
+                &:active{
+                    color: $beige_color;
+                }
+            }
+        }
+        &__tasklist{
+            width: 100%;
+
+            &__menu{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        &__empty{
+            text-align: center;
+
+            color: $white_color;
+
+            @include verdana(600,1.25rem);
+            
+            @media screen and (max-width:576px){
+                @include verdana(600,1rem);
+            }
+        }
+    }
+
+}

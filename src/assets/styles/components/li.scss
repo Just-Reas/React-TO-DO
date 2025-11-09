@@ -1,0 +1,48 @@
+.taskLi{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 46px;
+
+    border: .1875rem solid $neon_color;
+    border-radius: .5rem;
+
+
+    color: $white_color;
+
+    padding: 0 16px;
+
+    @include verdana(600,1rem);
+    
+    @media screen and (max-width:576px){
+      @include verdana(600,0.75rem);
+    }
+
+    &__group{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        gap: 10px;
+    }
+
+    &__button{
+        color: $black_color;
+        background-color: unset;
+        border: unset;
+
+        &__svg{
+            color: white;
+
+            &:hover{
+                color: $neon_color;
+            }
+
+            &:active{
+                color: $beige_color;
+            }
+        }
+    }
+    
+}

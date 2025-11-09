@@ -1,0 +1,48 @@
+.field__input{
+    padding: .75rem 1rem;
+
+    background-color: $black_color;
+    border-radius: .5rem;
+    border: .1875rem solid $neon_color;
+
+    color: $beige_color;
+    @include verdana(600,1rem);
+
+    @media screen and (max-width:576px){
+      @include verdana(600,0.75rem);
+    }
+    &:focus{
+        color: $white_color;
+        outline: none;
+        animation: glow-continuous 3s ease-in-out infinite;
+    }
+}
+
+@keyframes glow-continuous {
+  0% {
+    box-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.7),
+      0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 15px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.8),
+      0 0 20px rgba(0, 255, 255, 0.6),
+      0 0 30px rgba(0, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.7),
+      0 0 10px rgba(0, 255, 255, 0.5),
+      0 0 15px rgba(0, 255, 255, 0.3);
+  }
+}
+
+#new__task{
+    width: 100%;
+}
+
+#search__task{
+    width: 100%;
+}

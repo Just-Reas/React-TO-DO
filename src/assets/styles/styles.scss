@@ -1,0 +1,55 @@
+@import "./normalize.css";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./components/button.scss";
+@import "./components/fields.scss";
+@import "./components/window.scss";
+@import "./components/li.scss";
+@import "./components/checkbox.scss";
+
+:root{
+    font-size: 16px;
+    background-color: $black_color;
+}
+
+.container{
+    max-width: 75rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('Verdana.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('Verdana-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('Verdana-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url('Verdana-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

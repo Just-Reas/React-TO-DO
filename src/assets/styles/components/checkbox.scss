@@ -1,0 +1,55 @@
+.task-checkbox__container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.task-checkbox {
+    opacity: 0;
+
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid $white_color;
+    background: $black_color;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-checkbox:checked~.checkbox-custom {
+    background: $black_color;
+    border-color: $neon_color;
+}
+
+.checkbox-custom::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: '';
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s ease;
+}
+
+.task-checkbox:checked~.checkbox-custom::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.task-checkbox__container:hover .checkbox-custom {
+    border-color: $neon_color;
+}

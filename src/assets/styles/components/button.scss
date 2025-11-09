@@ -1,0 +1,36 @@
+.field__button{
+    padding: .75rem;
+    margin-left: 1rem;
+
+    background-color: $black_color;
+    border: .125rem solid $neon_color;
+    border-radius: .5rem;
+
+    color: $white_color;
+
+    @include verdana(600,1rem);
+
+    @media screen and (max-width:576px){
+      @include verdana(600,0.75rem);
+    }
+
+    &:hover{
+        animation: glow-soft 1.5s ease-out forwards;
+    }
+
+    &:active{
+        color: $gray_color;
+    }
+}
+
+@keyframes glow-soft {
+  0% {
+    box-shadow: 0 0 0 rgba(0, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 30px rgba(0, 255, 255, 0.2);
+  }
+}
