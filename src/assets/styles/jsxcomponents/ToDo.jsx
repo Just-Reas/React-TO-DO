@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react'
+import { useState, useEffect, useMemo, useCallback} from 'react'
 
 
 import AddTask from "./AddTask"
@@ -9,7 +9,8 @@ import ToDoList from "./ToDoList"
 const ToDo = () => {
 
     const [tasks,setTasks] = useState( ()=>{
-         const savedTasks = localStorage.getItem('tasks')
+    try{
+        const savedTasks = localStorage.getItem('tasks')
 
          if (savedTasks){
             return JSON.parse(savedTasks)
@@ -19,28 +20,30 @@ const ToDo = () => {
             {id: 'task-1', title: 'Сойти с ума', isDone: true},
             {id: 'task-2', title: 'Погладить кота', isDone: false},
         ]
-        
+    }catch{
+        console.log("local storage error")
+    }
     })
 
     const [newTaskTitle, setNewTaskTitle] = useState('')
 
     const [searchQuery, setSearchQuery] = useState('')
 
-    const deleteAllTasks = () => {
+    const deleteAllTasks = useCallback(() => {
         const isConfirmed = confirm('Are you sure?')
 
         if (isConfirmed){
             setTasks([])
         }
-    }
+    },[])
 
-    const deleteTask = (taskId) => {
+    const deleteTask = useCallback((taskId) => {
         setTasks(
             tasks.filter((task) => task.id !== taskId)
         )
-    }
+    }, [tasks])
 
-    const toggleTaskComplete = (taskId, isDone) =>{
+    const toggleTaskComplete = useCallback((taskId, isDone) =>{
         setTasks(
             tasks.map((task) => {
                 if (task.id === taskId){
@@ -50,7 +53,7 @@ const ToDo = () => {
             }
             )
         )
-    }
+    }, [tasks])
 
 
     const addTask = () =>{
@@ -71,9 +74,11 @@ const ToDo = () => {
     },[tasks])
 
     const clearSearchQuery= searchQuery.trim().toLowerCase()
-    const filteredTasks = (clearSearchQuery.length > 0)
+    const filteredTasks = useMemo(() =>{
+        (clearSearchQuery.length > 0)
     ? tasks.filter(({title}) => title.toLowerCase().includes(clearSearchQuery))
     : null
+    },[tasks,searchQuery])
 
     return (
         <div className="container">
