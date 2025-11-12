@@ -1,4 +1,4 @@
-import ToDo from './assets/components/window/ToDo'
+import ToDo from '../src/components/window/ToDo'
 
 const App = () => {
 

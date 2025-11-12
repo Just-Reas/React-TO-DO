@@ -36,7 +36,7 @@ export const useTasks = () => {
   const toggleTaskComplete = useCallback(
     (taskId, isDone) => {
     console.log("AA");
-    setTasks(
+    setTasks( (tasks) =>
       tasks.map((task) => {
         if (task.id === taskId) {
           return { ...task, isDone };
