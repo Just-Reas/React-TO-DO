@@ -1,7 +1,7 @@
 import { memo } from "react"
-import TaskItem from "./TaskItem"
+import TaskItem from "../taskitem/TaskItem"
 
-const ToDoList = memo((props) => {
+const ToDoList = (props) => {
     const{
         tasks = [],
         onDeleteOneClick,
@@ -38,6 +38,6 @@ const ToDoList = memo((props) => {
             </ul>
         </div>
     )
-})
+}
 
 export default ToDoList

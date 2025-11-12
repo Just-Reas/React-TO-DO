@@ -1,4 +1,4 @@
-import ToDo from './assets/styles/jsxcomponents/ToDo.jsx'
+import ToDo from './assets/components/window/ToDo'
 
 const App = () => {
 

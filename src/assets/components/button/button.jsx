@@ -5,6 +5,7 @@ const Button = (props) => {
         className = '',
         type = 'button',
         children,
+        onClick,
         addTask,
     } = props
     return(

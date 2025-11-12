@@ -1,11 +1,11 @@
 @import "./normalize.css";
 @import "./variables.scss";
 @import "./mixins.scss";
-@import "./components/button.scss";
-@import "./components/fields.scss";
-@import "./components/window.scss";
-@import "./components/li.scss";
-@import "./components/checkbox.scss";
+@import "../components/button/button.scss";
+@import "../components/field/fields.scss";
+@import "../components/window/window.scss";
+@import "../components/taskitem/li.scss";
+@import "../components/taskitem/checkbox.scss";
 
 :root{
     font-size: 16px;

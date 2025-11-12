@@ -1,4 +1,4 @@
-import AddField from "./AddField"
+import AddField from "../field/AddField"
 
 const SearchField = (props) => {
     const{
