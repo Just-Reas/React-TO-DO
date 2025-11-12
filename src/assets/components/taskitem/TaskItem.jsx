@@ -1,4 +1,6 @@
-const TaskItem = (props) => {
+import { memo } from "react"
+
+const TaskItem = (props) =>{
     const{
         className = '',
         id,

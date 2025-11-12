@@ -2,7 +2,7 @@
     import AddField from "../field/AddField"
     import Button from "../button/button"
 
-    const AddTask = (props) => {
+    const AddTask = memo((props) => {
         const{
             addTask,
         }= props
@@ -19,6 +19,6 @@
                 <Button className="field__button" type="button" addTask={() => {addTask(ref.current.value)}}>Add</Button>
             </div>
         )
-    }
+    })
 
     export default AddTask

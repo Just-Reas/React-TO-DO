@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 
 export const useTasks = () => {
@@ -19,19 +19,22 @@ export const useTasks = () => {
     }
   });
 
-  const deleteAllTasks = () => {
+  const deleteAllTasks = useCallback(
+    () => {
     const isConfirmed = confirm("Are you sure?");
 
     if (isConfirmed) {
       setTasks([]);
     }
-  };
+  },[])
 
-  const deleteTask = (taskId) => {
+  const deleteTask = useCallback( 
+    (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId));
-  };
+  }, [tasks])
 
-  const toggleTaskComplete = (taskId, isDone) => {
+  const toggleTaskComplete = useCallback(
+    (taskId, isDone) => {
     console.log("AA");
     setTasks(
       tasks.map((task) => {
@@ -41,7 +44,7 @@ export const useTasks = () => {
         return task;
       })
     );
-  };
+  },[tasks])
 
   const addTask = (title) => {
     if (!title.length) {

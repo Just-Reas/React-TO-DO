@@ -1,6 +1,6 @@
 import { memo } from "react"
 
-const ToDoBar = (props) => {
+const ToDoBar = memo((props) => {
     const{
         total,
         done,
@@ -17,6 +17,6 @@ const ToDoBar = (props) => {
             )}
         </div>
     )
-}
+})
 
 export default ToDoBar

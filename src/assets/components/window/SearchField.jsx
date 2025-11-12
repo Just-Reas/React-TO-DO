@@ -1,6 +1,7 @@
+import { memo } from "react"
 import AddField from "../field/AddField"
 
-const SearchField = (props) => {
+const SearchField = memo((props) => {
     const{
         searchQuery,
         setSearchQuery,
@@ -17,6 +18,6 @@ const SearchField = (props) => {
         onChange={(event) => event.preventDefault()}
         />
     )
-}
+})
 
 export default SearchField
